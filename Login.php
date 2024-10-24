@@ -130,7 +130,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="Home.html">Home</a>
+                    <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Trainers</a>
@@ -142,7 +142,7 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="Login.php"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div> 

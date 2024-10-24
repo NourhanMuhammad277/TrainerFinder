@@ -117,7 +117,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="Home.html">Home</a>
+                    <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Trainers</a>
@@ -147,7 +147,7 @@
     
     <script>
         document.querySelector('.join-button').addEventListener('click', function() {
-            window.location.href = 'Login.html'; // Redirects to home.html
+            window.location.href = 'Login.php'; // Redirects to home.html
         });
     </script>
 </body>

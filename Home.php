@@ -178,7 +178,7 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="Login.php"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div>
