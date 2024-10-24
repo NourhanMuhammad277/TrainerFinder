@@ -3,15 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Find Your Trainer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        body, html {
+       body,html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden; /* Prevent scrolling */
         }
-
+        #nav {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white; /* Change text color to white for better readability */
+        }
+        header {
+            background: black;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            text-align: center;
+        }
+        .logo-image {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
         .video-container {
             position: relative;
             height: 100%;
@@ -68,12 +101,12 @@
 
         .join-button:hover {
             background-color: green;
-            color: white; /* Change text color on hover */
+            color: white; 
         } 
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success" id="nav">
         <a class="navbar-brand" href="#">
             <img src="images/ss.png" alt="Logo" style="height:30px; width:30px; margin-right:10px;">
             Trainer Finder
@@ -84,7 +117,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="Home.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Trainers</a>
@@ -96,11 +129,10 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="Login.html"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
-        </div>
-    </nav>
+        </div> </nav>
     
     <div class="video-container">
         <video autoplay muted loop class="background-video">
@@ -112,6 +144,7 @@
             <button class="join-button">JOIN US</button>
         </div>
     </div>
+    
     <script>
         document.querySelector('.join-button').addEventListener('click', function() {
             window.location.href = 'Login.html'; // Redirects to home.html
