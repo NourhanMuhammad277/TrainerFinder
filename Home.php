@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,31 +13,38 @@
             margin: 0;
             padding: 0;
             background-color: black;
-            color: white; /* Change text color to white for better readability */
+            color: white;
+            /* Change text color to white for better readability */
         }
+
         header {
             background: black;
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
         }
+
         .logo {
             text-align: center;
         }
+
         .logo-image {
             width: 100px;
             height: auto;
             margin-bottom: 10px;
         }
+
         nav {
             margin: 20px 0;
         }
+
         nav a {
             margin: 0 15px;
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
         }
+
         .hero {
             background-image: url('images/ttt.jpg');
             background-size: cover;
@@ -44,16 +52,20 @@
             padding: 100px 0;
             text-align: center;
         }
+
         .hero h1 {
             font-size: 50px;
         }
+
         .hero p {
             font-size: 20px;
         }
+
         .content {
             padding: 20px;
             text-align: center;
         }
+
         .card {
             display: inline-block;
             margin: 15px;
@@ -63,15 +75,23 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         .card img {
-            max-width: 100%; /* This allows the image to resize to fit its parent */
-            border-radius: 8px; /* Maintain existing styling */
+            max-width: 100%;
+            /* This allows the image to resize to fit its parent */
+            border-radius: 8px;
+            /* Maintain existing styling */
         }
+
         .trainer-image {
-            max-width: 200px; /* Set to a smaller max-width */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 15px; /* Add space below the image */
+            max-width: 200px;
+            /* Set to a smaller max-width */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin-bottom: 15px;
+            /* Add space below the image */
         }
+
         .details-button {
             background-color: #28a745;
             color: white;
@@ -81,21 +101,25 @@
             border-radius: 5px;
             margin-top: 10px;
         }
+
         .details-button:hover {
             background-color: #218838;
         }
+
         .video-slider {
             position: relative;
             margin: 20px 0;
         }
+
         .video-slider video {
             width: 100%;
             display: none;
         }
-      
+
         .video-slider video.active {
             display: block;
         }
+
         .slider-controls {
             position: absolute;
             top: 50%;
@@ -104,6 +128,7 @@
             justify-content: space-between;
             transform: translateY(-50%);
         }
+
         .slider-button {
             background-color: #28a745;
             border: none;
@@ -112,47 +137,57 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         .footer {
             background-color: #343a40;
             color: #ffffff;
             padding: 20px 0;
         }
+
         .section-title {
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         .contact-info {
             list-style-type: none;
             padding: 0;
         }
-        #ss{
-            color:black;
+
+        #ss {
+            color: black;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
-        #sport
-        {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color:black;
+
+        #sport {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
             font-style: bold;
         }
+
         .contact-info li {
             margin: 5px 0;
         }
+
         .social-icons {
             margin: 15px 0;
         }
+
         .social-icons a {
             margin: 0 10px;
             color: white;
         }
+
         .contact-form {
             margin-top: 20px;
         }
+
         .contact-form .form-group {
             margin-bottom: 15px;
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -197,7 +232,7 @@
         </div>
         <div class="card">
             <h3 id="sport">Soccer</h3>
-            <p id="ss" >Get updates on your favorite teams and matches.</p>
+            <p id="ss">Get updates on your favorite teams and matches.</p>
         </div>
         <div class="card">
             <h3 id="sport">Fitness</h3>
@@ -207,20 +242,20 @@
         <h2 id="trainers">Find Our Trainers</h2>
         <div class="card">
             <img src="images/coach1.jpg" alt="John Doe" class="trainer-image">
-            <h3>John Doe</h3>
-            <p>Expert in Strength Training</p>
+            <h3 class=" text-dark">John Doe</h3>
+            <p class=" text-dark">Expert in Strength Training</p>
             <button class="details-button">Details</button>
         </div>
         <div class="card">
             <img src="images/coach22.jpg" alt="Jane Smith" class="trainer-image">
-            <h3>Jane Smith</h3>
-            <p>Certified Yoga Instructor</p>
+            <h3 class=" text-dark">Jane Smith</h3>
+            <p class=" text-dark">Certified Yoga Instructor</p>
             <button class="details-button">Details</button>
         </div>
         <div class="card">
             <img src="images/coach33.jpg" alt="Mark Johnson" class="trainer-image">
-            <h3>Mark Johnson</h3>
-            <p>Specialist in Cardio and Endurance</p>
+            <h3 class=" text-dark">Mark Johnson</h3>
+            <p class=" text-dark">Specialist in Cardio and Endurance</p>
             <button class="details-button">Details</button>
         </div>
 
@@ -321,4 +356,5 @@
     </script>
 
 </body>
+
 </html>

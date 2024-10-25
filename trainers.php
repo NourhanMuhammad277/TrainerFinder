@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 // Fetch trainers
 $result = $conn->query("SELECT * FROM trainers");
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         echo '<div class="trainer-profile">';
         echo '<h3>' . $row['name'] . '</h3>';
         echo '<p>' . $row['specialty'] . '</p>';
@@ -19,4 +19,3 @@ if ($result->num_rows > 0) {
     echo "No trainers found.";
 }
 $conn->close();
-?>

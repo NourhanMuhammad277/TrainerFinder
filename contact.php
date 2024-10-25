@@ -8,4 +8,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail("your-email@example.com", "New Contact Message", $message, "From: " . $email);
     echo "Message sent!";
 }
-?>
