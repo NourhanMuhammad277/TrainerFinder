@@ -97,7 +97,6 @@ ini_set('display_errors', 1);
             width: 100%;
             display: none;
         }
-      
         .video-slider video.active {
             display: block;
         }
@@ -130,14 +129,13 @@ ini_set('display_errors', 1);
             list-style-type: none;
             padding: 0;
         }
-        #ss{
-            color:black;
+        #ss {
+            color: black;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
-        #sport
-        {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            color:black;
+        #sport {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
             font-style: bold;
         }
         .contact-info li {
@@ -182,8 +180,16 @@ ini_set('display_errors', 1);
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php"><i class="fas fa-user"></i></a>
+                <!-- Profile dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="profile.php">View Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.php">Log Out</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -202,7 +208,7 @@ ini_set('display_errors', 1);
         </div>
         <div class="card">
             <h3 id="sport">Soccer</h3>
-            <p id="ss" >Get updates on your favorite teams and matches.</p>
+            <p id="ss">Get updates on your favorite teams and matches.</p>
         </div>
         <div class="card">
             <h3 id="sport">Fitness</h3>
@@ -250,80 +256,51 @@ ini_set('display_errors', 1);
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white">
-        <div class="container">
-            <div class="row py-4">
-                <div class="col-md-4">
-                    <h3 class="section-title">About Us</h3>
-                    <p>At Trainer Finder, we connect you with professional trainers who can help you achieve your fitness goals, no matter where you are on your fitness journey.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="section-title">Our Address</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 198 West 21th Street, Suite 721 New York, NY 10016</li>
-                        <li><i class="fas fa-phone"></i> +1 235 2355 98</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                        <li><i class="fas fa-globe"></i> <a href="#">www.yoursite.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="section-title">Drop Us a Line</h3>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-md">Send Message</button>
-                        </div>
-                    </form>
-                </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <h4>Contact Us</h4>
+            <ul class="contact-info">
+                <li>Email: info@trainerfinder.com</li>
+                <li>Phone: +1 234 567 890</li>
+                <li>Address: 123 Fitness Lane, Workout City, USA</li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p class="social-icons">
-                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-dribbble"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-                    </p>
-                    <p>&copy; 2024 Trainer Finder. All Rights Reserved.</p>
-                </div>
-            </div>
+            <p>&copy; 2024 Trainer Finder. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        // Video slider functionality
         const videos = document.querySelectorAll('.video-slider video');
-        let currentVideo = 0;
+        let currentIndex = 0;
 
-        // Show the first video
-        videos[currentVideo].classList.add('active');
-
-        // Function to change video
-        function changeVideo(direction) {
-            videos[currentVideo].classList.remove('active');
-            currentVideo = (currentVideo + direction + videos.length) % videos.length;
-            videos[currentVideo].classList.add('active');
+        function showVideo(index) {
+            videos.forEach((video, i) => {
+                video.classList.toggle('active', i === index);
+                if (i === index) {
+                    video.play(); // Play the active video
+                } else {
+                    video.pause(); // Pause the other videos
+                }
+            });
         }
 
-        // Event listeners for buttons
-        document.getElementById('prevButton').addEventListener('click', function() {
-            changeVideo(-1);
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % videos.length;
+            showVideo(currentIndex);
         });
-        document.getElementById('nextButton').addEventListener('click', function() {
-            changeVideo(1);
+
+        document.getElementById('prevButton').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+            showVideo(currentIndex);
         });
     </script>
-
 </body>
 </html>
