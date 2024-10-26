@@ -183,7 +183,7 @@ ini_set('display_errors', 1);
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Login.php"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="profile.php"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div>
