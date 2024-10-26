@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ?>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainer Finder</title>
@@ -190,171 +195,152 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="#">
-            <img src="images/ss.png" alt="Logo" style="height:30px; width:30px; margin-right:10px;">
-            Trainer Finder
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Trainers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.php"><i class="fas fa-user"></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="#">
+        <img src="images/ss.png" alt="Logo" style="height:30px; width:30px; margin-right:10px;">
+        Trainer Finder
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Trainers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <!-- Profile dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile.php">View Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="login.php">Log Out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <div class="hero">
-        <h1>Welcome to Trainer Finder</h1>
-        <p>Your ultimate destination for all things sports!</p>
+<div class="hero">
+    <h1>Welcome to Trainer Finder</h1>
+    <p>Your ultimate destination for all things sports!</p>
+</div>
+
+<div class="content">
+    <h2>Featured Sports</h2>
+    <div class="card">
+        <h3 id="sport">Basketball</h3>
+        <p id="ss">Join us for the latest news, scores, and events.</p>
+    </div>
+    <div class="card">
+        <h3 id="sport">Soccer</h3>
+        <p id="ss">Get updates on your favorite teams and matches.</p>
+    </div>
+    <div class="card">
+        <h3 id="sport">Fitness</h3>
+        <p id="ss">Find workout tips, routines, and personal trainers.</p>
     </div>
 
-    <div class="content">
-        <h2>Featured Sports</h2>
-        <div class="card">
-            <h3 id="sport">Basketball</h3>
-            <p id="ss">Join us for the latest news, scores, and events.</p>
-        </div>
-        <div class="card">
-            <h3 id="sport">Soccer</h3>
-            <p id="ss">Get updates on your favorite teams and matches.</p>
-        </div>
-        <div class="card">
-            <h3 id="sport">Fitness</h3>
-            <p id="ss">Find workout tips, routines, and personal trainers.</p>
-        </div>
-
-        <h2 id="trainers">Find Our Trainers</h2>
-        <div class="card">
-            <img src="images/coach1.jpg" alt="John Doe" class="trainer-image">
-            <h3 class=" text-dark">John Doe</h3>
-            <p class=" text-dark">Expert in Strength Training</p>
-            <button class="details-button">Details</button>
-        </div>
-        <div class="card">
-            <img src="images/coach22.jpg" alt="Jane Smith" class="trainer-image">
-            <h3 class=" text-dark">Jane Smith</h3>
-            <p class=" text-dark">Certified Yoga Instructor</p>
-            <button class="details-button">Details</button>
-        </div>
-        <div class="card">
-            <img src="images/coach33.jpg" alt="Mark Johnson" class="trainer-image">
-            <h3 class=" text-dark">Mark Johnson</h3>
-            <p class=" text-dark">Specialist in Cardio and Endurance</p>
-            <button class="details-button">Details</button>
-        </div>
-
-        <h2 id="videos">Video Slider</h2>
-        <div class="video-slider">
-            <video class="active" controls>
-                <source src="videos/fitness2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="videos/1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="videos/fitness3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="slider-controls">
-                <button class="slider-button" id="prevButton">&lt;</button>
-                <button class="slider-button" id="nextButton">&gt;</button>
-            </div>
-        </div>
+    <h2 id="trainers">Find Our Trainers</h2>
+    <div class="card">
+        <img src="images/coach1.jpg" alt="John Doe" class="trainer-image">
+        <h3 class=" text-dark">John Doe</h3>
+        <p class=" text-dark">Expert in Strength Training</p>
+        <button class="details-button">Details</button>
+    </div>
+    <div class="card">
+        <img src="images/coach22.jpg" alt="Jane Smith" class="trainer-image">
+        <h3 class=" text-dark">Jane Smith</h3>
+        <p class=" text-dark">Certified Yoga Instructor</p>
+        <button class="details-button">Details</button>
+    </div>
+    <div class="card">
+        <img src="images/coach33.jpg" alt="Mark Johnson" class="trainer-image">
+        <h3 class=" text-dark">Mark Johnson</h3>
+        <p class=" text-dark">Specialist in Cardio and Endurance</p>
+        <button class="details-button">Details</button>
     </div>
 
-    <footer class="footer bg-dark text-white">
-        <div class="container">
-            <div class="row py-4">
-                <div class="col-md-4">
-                    <h3 class="section-title">About Us</h3>
-                    <p>At Trainer Finder, we connect you with professional trainers who can help you achieve your fitness goals, no matter where you are on your fitness journey.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="section-title">Our Address</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 198 West 21th Street, Suite 721 New York, NY 10016</li>
-                        <li><i class="fas fa-phone"></i> +1 235 2355 98</li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                        <li><i class="fas fa-globe"></i> <a href="#">www.yoursite.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="section-title">Drop Us a Line</h3>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-md">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p class="social-icons">
-                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-dribbble"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-                    </p>
-                    <p>&copy; 2024 Trainer Finder. All Rights Reserved.</p>
-                </div>
-            </div>
+    <h2 id="videos">Video Slider</h2>
+    <div class="video-slider">
+        <video class="active" controls>
+            <source src="videos/fitness2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="videos/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="videos/fitness3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="slider-controls">
+            <button class="slider-button" id="prevButton">&lt;</button>
+            <button class="slider-button" id="nextButton">&gt;</button>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <script>
-        const videos = document.querySelectorAll('.video-slider video');
-        let currentVideo = 0;
+<footer class="footer">
+    <div class="container text-center">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+            <li>Email: info@trainerfinder.com</li>
+            <li>Phone: +1 234 567 890</li>
+            <li>Address: 123 Fitness Lane, Workout City, USA</li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Trainer Finder. All rights reserved.</p>
+    </div>
+</footer>
 
-        // Show the first video
-        videos[currentVideo].classList.add('active');
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Video slider functionality
+    const videos = document.querySelectorAll('.video-slider video');
+    let currentIndex = 0;
 
-        // Function to change video
-        function changeVideo(direction) {
-            videos[currentVideo].classList.remove('active');
-            currentVideo = (currentVideo + direction + videos.length) % videos.length;
-            videos[currentVideo].classList.add('active');
-        }
-
-        // Event listeners for buttons
-        document.getElementById('prevButton').addEventListener('click', function() {
-            changeVideo(-1);
+    function showVideo(index) {
+        videos.forEach((video, i) => {
+            video.classList.toggle('active', i === index);
+            if (i === index) {
+                video.play(); // Play the active video
+            } else {
+                video.pause(); // Pause the other videos
+            }
         });
-        document.getElementById('nextButton').addEventListener('click', function() {
-            changeVideo(1);
-        });
-    </script>
+    }
 
+    document.getElementById('nextButton').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % videos.length;
+        showVideo(currentIndex);
+    });
+
+    document.getElementById('prevButton').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        showVideo(currentIndex);
+    });
+</script>
 </body>
 
 </html>
