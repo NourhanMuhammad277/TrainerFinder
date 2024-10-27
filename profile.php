@@ -51,25 +51,25 @@ $conn->close();
             margin: 0;
             padding: 0;
             background-color: black;
-            color: white; /* Change text color to white for better readability */
+            color: white;
         }
         .logo {
-            width: 30px; /* Adjust logo size */
+            width: 30px; 
             height: auto;
             margin-right: 10px;
         }
         .list-group-item {
-            color: black; /* Set text color to black for username and email */
-            font-weight: bold; /* Make font bold */
+            color: black; 
+            font-weight: bold; 
         }
-        /* Make navbar font bold */
+
         .navbar-nav .nav-link {
-            font-weight: bold; /* Make the navbar links bold */
+            font-weight: bold; 
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <a class="navbar-brand" href="#">
             <img src="images/ss.png" alt="Logo" class="logo">
@@ -84,14 +84,12 @@ $conn->close();
                     <a class="nav-link" href="Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Trainers</a>
+                    <a class="nav-link" href="trainers.php">Trainers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
+            
                 <li class="nav-item">
                     <a class="nav-link" href="Login.php">Logout</a>
                 </li>

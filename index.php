@@ -137,16 +137,14 @@
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Trainers</a>
+                    <a class="nav-link" href="trainers.php">Trainers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                 </li>
+              
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.html"><i class="fas fa-user"></i></a>
+                    <a class="nav-link" href="Login.php"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
         </div>
@@ -165,7 +163,7 @@
 
     <script>
         document.querySelector('.join-button').addEventListener('click', function() {
-            window.location.href = 'Login.php'; // Redirects to home.html
+            window.location.href = 'Login.php'; 
         });
     </script>
 </body>

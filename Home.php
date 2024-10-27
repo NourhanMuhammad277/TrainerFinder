@@ -207,18 +207,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="Home.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Trainers</a>
+                <a class="nav-link" href="trainers.php">Trainers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="about.php">About Us</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            <!-- Profile dropdown -->
+          
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
@@ -274,7 +271,7 @@
         <button class="details-button">Details</button>
     </div>
 
-    <h2 id="videos">Video Slider</h2>
+    <h2 id="videos">Some Of Our Sessions </h2>
     <div class="video-slider">
         <video class="active" controls>
             <source src="videos/fitness2.mp4" type="video/mp4">
@@ -299,7 +296,7 @@
     <div class="container text-center">
         <h4>Contact Us</h4>
         <ul class="contact-info">
-            <li>Email: info@trainerfinder.com</li>
+            <li>Email:nourhanmuhammad@trainerfinder.com</li>
             <li>Phone: +1 234 567 890</li>
             <li>Address: 123 Fitness Lane, Workout City, USA</li>
         </ul>
@@ -316,7 +313,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    // Video slider functionality
+ 
     const videos = document.querySelectorAll('.video-slider video');
     let currentIndex = 0;
 
@@ -324,9 +321,9 @@
         videos.forEach((video, i) => {
             video.classList.toggle('active', i === index);
             if (i === index) {
-                video.play(); // Play the active video
+                video.play(); 
             } else {
-                video.pause(); // Pause the other videos
+                video.pause(); 
             }
         });
     }
