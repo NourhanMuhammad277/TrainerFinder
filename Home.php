@@ -19,7 +19,7 @@
             padding: 0;
             background-color: black;
             color: white;
-            /* Change text color to white for better readability */
+           
         }
 
         header {
@@ -37,10 +37,6 @@
             width: 100px;
             height: auto;
             margin-bottom: 10px;
-        }
-
-        nav {
-            margin: 20px 0;
         }
 
         nav a {
