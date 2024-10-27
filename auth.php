@@ -59,6 +59,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "No user or admin found with that email.";
         }
+          // Example for signup (you might have separate forms and logic)
+    $username = $_POST['txt'];
+    $confirm_password = $_POST['confirm_pswd'];
+
+    if ($password === $confirm_password) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users (email, password, username) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $email, $hashed_password, $username);
+        if ($stmt->execute()) {
+            echo "Signup successful!";
+            header("Location: Home.php"); // Redirect to Home.php after signup
+            exit(); // Make sure to call exit after redirect
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    } else {
+        echo "Passwords do not match.";
+    }
     }
 }
 
