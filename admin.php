@@ -71,16 +71,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+
+            </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Home.php">Home</a>
+                    <a class="nav-link" href="admin.php">Admin Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="trainers.php">Trainers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
-                </li>
-              
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i> Admin
