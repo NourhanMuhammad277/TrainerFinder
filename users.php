@@ -92,6 +92,13 @@ $conn->close();
         }
     </style>
     <script>
+        function openEditModal(id, username, email) {
+            document.getElementById('edit_id').value = id;
+            document.getElementById('edit_username').value = username;
+            document.getElementById('edit_email').value = email;
+            $('#editUserModal').modal('show');
+        }
+
         function confirmDelete() {
             return confirm('Are you sure you want to delete this user?');
         }
@@ -140,7 +147,11 @@ $conn->close();
                                         <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($row['id']); ?>">
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
-                                    <a href="edit_user.php?id=<?php echo htmlspecialchars($row['id']); ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="openEditModal(
+                                        <?php echo htmlspecialchars($row['id']); ?>, 
+                                        '<?php echo htmlspecialchars($row['username']); ?>',
+                                        '<?php echo htmlspecialchars($row['email']); ?>'
+                                    )">Edit</button>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -149,6 +160,37 @@ $conn->close();
             <?php else: ?>
                 <p class="text-center">No users found.</p>
             <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="update_id" id="edit_id">
+                    <div class="form-group">
+                        <label for="edit_username">Username</label>
+                        <input type="text" class="form-control" id="edit_username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_email">Email</label>
+                        <input type="email" class="form-control" id="edit_email" name="email" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
