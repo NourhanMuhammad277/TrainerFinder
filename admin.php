@@ -57,6 +57,53 @@
         .admin-section button:hover {
             background-color: #218838;
         }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #ss {
+            color: black;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #sport {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-style: bold;
+        }
+
+        .contact-info li {
+            margin: 5px 0;
+        }
+
+        .social-icons {
+            margin: 15px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+        }
+
+        .contact-form {
+            margin-top: 20px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -105,17 +152,27 @@
         </div>
 
         <div class="admin-section" style="margin-top: 20px;">
-            <h2>Site Settings and Reports</h2>
-            <p>Configure site settings or view detailed reports.</p>
-            <button onclick="location.href='settings.php'">Settings & Reports</button>
+            <h2>View All Trainers</h2>
+            <p>View and manage the users registered on the platform.</p>
+            <button onclick="location.href='trainerslist.php'">View Trainers </button>
         </div>
     </div>
-
-    <footer class="footer bg-dark text-center text-white mt-5 py-4">
-        <div class="container">
-            <p>&copy; 2024 Trainer Finder. All rights reserved.</p>
+    <footer class="footer">
+    <div class="container text-center">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+            <li>Email:nourhanmuhammad@trainerfinder.com</li>
+            <li>Phone: +1 234 567 890</li>
+            <li>Address: 123 Fitness Lane, Workout City, USA</li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-    </footer>
+        <p>&copy; 2024 Trainer Finder. All rights reserved.</p>
+    </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
