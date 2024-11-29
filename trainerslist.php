@@ -42,12 +42,12 @@ $conn->close();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
         header, .navbar {
-            background: black;
+            background: #28a745;
             color: #ffffff;
         }
         .navbar-brand img {
@@ -60,15 +60,35 @@ $conn->close();
             font-weight: bold;
         }
         .card {
-            background-color: #343a40;
-            color: white;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .btn-danger {
+            margin: 5px;
+            background-color: #dc3545;
             border: none;
         }
-        .table th, .table td {
+        .table-dark {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+        .table-dark th, .table-dark td {
             vertical-align: middle;
         }
-        .btn-warning, .btn-danger {
-            margin: 5px;
+        .card-header {
+            background-color: #28a745;
+            color: #ffffff;
+            font-size: 1.25rem;
+            padding: 10px;
+        }
+        .form-button {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .form-button button {
+            width: 120px;
         }
     </style>
     <script>
@@ -83,16 +103,13 @@ $conn->close();
         <img src="images/ss.png" alt="Logo">
         Trainer Finder
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="admin.php">Admin Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="trainer_application.php">Trainer Applications</a>
+                <a class="nav-link" href="trainer_applications.php">Trainer Applications</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
-            color: white;
+            background-color: #f4f7f6; /* Light background for a comfortable view */
+            color: #333; /* Dark text for better readability */
         }
         header, .navbar {
-            background: black;
+            background: #005f40; /* A deeper green for a professional touch */
             color: #ffffff;
         }
         .navbar-brand img {
@@ -33,13 +33,15 @@
             font-weight: bold;
         }
         .content {
-            padding: 20px;
+            padding: 30px;
         }
         .admin-section {
-            background-color: #343a40;
-            padding: 20px;
+            background-color: #ffffff; /* White background for sections */
+            padding: 30px;
             border-radius: 8px;
-            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            margin-bottom: 20px;
+            color: #333;
             text-align: center;
         }
         .admin-section h2 {
@@ -47,20 +49,22 @@
             margin-bottom: 20px;
         }
         .admin-section button {
-            background-color: #28a745;
+            background-color: #28a745; /* Green buttons for action */
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             color: white;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
         .admin-section button:hover {
-            background-color: #218838;
+            background-color: #218838; /* Darker green on hover */
         }
         .footer {
-            background-color: #343a40;
+            background-color: #343a40; /* Footer with a dark color */
             color: #ffffff;
-            padding: 20px 0;
+            padding: 30px 0;
+            margin-top: 30px;
         }
 
         .section-title {
@@ -71,6 +75,8 @@
         .contact-info {
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            font-size: 16px;
         }
 
         #ss {
@@ -81,7 +87,7 @@
         #sport {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: black;
-            font-style: bold;
+            font-weight: bold;
         }
 
         .contact-info li {
@@ -104,6 +110,16 @@
         .contact-form .form-group {
             margin-bottom: 15px;
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            .admin-section {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -118,8 +134,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-
-            </li>
                 <li class="nav-item">
                     <a class="nav-link" href="admin.php">Admin Dashboard</a>
                 </li>
@@ -128,7 +142,6 @@
                         <i class="fas fa-user"></i> Admin
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Login.php">Log Out</a>
                     </div>
@@ -138,41 +151,42 @@
     </nav>
 
     <div class="content">
-        <h1>Admin Dashboard</h1>
+        <h1 class="text-center mb-4">Admin Dashboard</h1>
         <div class="admin-section">
             <h2>Manage Trainer Applications</h2>
             <p>Review and approve or reject trainer applications.</p>
             <button onclick="location.href='trainer_applications.php'">Go to Applications</button>
         </div>
 
-        <div class="admin-section" style="margin-top: 20px;">
+        <div class="admin-section">
             <h2>View All Users</h2>
             <p>View and manage the users registered on the platform.</p>
             <button onclick="location.href='users.php'">View Users</button>
         </div>
 
-        <div class="admin-section" style="margin-top: 20px;">
+        <div class="admin-section">
             <h2>View All Trainers</h2>
             <p>View and manage the users registered on the platform.</p>
-            <button onclick="location.href='trainerslist.php'">View Trainers </button>
+            <button onclick="location.href='trainerslist.php'">View Trainers</button>
         </div>
     </div>
+
     <footer class="footer">
-    <div class="container text-center">
-        <h4>Contact Us</h4>
-        <ul class="contact-info">
-            <li>Email:nourhanmuhammad@trainerfinder.com</li>
-            <li>Phone: +1 234 567 890</li>
-            <li>Address: 123 Fitness Lane, Workout City, USA</li>
-        </ul>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="container text-center">
+            <h4>Contact Us</h4>
+            <ul class="contact-info">
+                <li>Email: nourhanmuhammad@trainerfinder.com</li>
+                <li>Phone: +1 234 567 890</li>
+                <li>Address: 123 Fitness Lane, Workout City, USA</li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Trainer Finder. All rights reserved.</p>
         </div>
-        <p>&copy; 2024 Trainer Finder. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

@@ -106,12 +106,12 @@ $conn->close();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
         header, .navbar {
-            background: black;
+            background: #28a745;
             color: #ffffff;
         }
         .navbar-brand img {
@@ -123,11 +123,34 @@ $conn->close();
             color: #ffffff;
             font-weight: bold;
         }
-       .card {
-            background-color: #343a40;
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         .btn-success, .btn-danger {
             margin: 5px;
+        }
+        .table-dark {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+        .table-dark th, .table-dark td {
+            vertical-align: middle;
+        }
+        .card-header {
+            background-color: #28a745;
+            color: #ffffff;
+            font-size: 1.25rem;
+            padding: 10px;
+        }
+        .form-button {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .form-button button {
+            width: 120px;
         }
     </style>
     <script>
