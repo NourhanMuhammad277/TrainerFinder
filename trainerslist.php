@@ -12,17 +12,25 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-// Handle delete action
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
-    $delete_id = intval($_POST['delete_id']);
-    $sql = "DELETE FROM accepted_trainers WHERE id = ?";
+// Handle form submission for updating trainer details
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_id'])) {
+    $trainer_id = $_POST['update_id'];
+    $user_id = $_POST['user_id'];
+    $certificate = $_POST['certificate'];
+    $location = $_POST['location'];
+    $sport = $_POST['sport'];
+    $day_time = $_POST['day_time'];
+    $state = $_POST['state'];
+
+    // Update the trainer details in the database
+    $sql = "UPDATE accepted_trainers SET user_id = ?, certificate = ?, location = ?, sport = ?, day_time = ?, state = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $delete_id);
+    $stmt->bind_param("isssssi", $user_id, $certificate, $location, $sport, $day_time, $state, $trainer_id);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Trainer deleted successfully.'); window.location.href = 'trainerslist.php';</script>";
+        echo "<script>alert('Trainer details updated successfully.'); window.location.href = 'trainerslist.php';</script>";
     } else {
-        echo "<script>alert('Error deleting trainer.');</script>";
+        echo "<script>alert('Error updating trainer details.');</script>";
     }
     $stmt->close();
 }
@@ -92,8 +100,15 @@ $conn->close();
         }
     </style>
     <script>
-        function confirmDelete() {
-            return confirm('Are you sure you want to delete this trainer?');
+        function openEditModal(id, user_id, certificate, location, sport, day_time, state) {
+            document.getElementById('edit_id').value = id;
+            document.getElementById('edit_user_id').value = user_id;
+            document.getElementById('edit_certificate').value = certificate;
+            document.getElementById('edit_location').value = location;
+            document.getElementById('edit_sport').value = sport;
+            document.getElementById('edit_day_time').value = day_time;
+            document.getElementById('edit_state').value = state;
+            $('#editTrainerModal').modal('show');
         }
     </script>
 </head>
@@ -157,11 +172,19 @@ $conn->close();
                                 <td><?php echo htmlspecialchars($row['state']); ?></td>
                                 <td><?php echo htmlspecialchars($row['approved_at']); ?></td>
                                 <td>
-                                    <form method="POST" style="display: inline;" onsubmit="return confirmDelete()">
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="openEditModal(
+                                        <?php echo htmlspecialchars($row['id']); ?>, 
+                                        '<?php echo htmlspecialchars($row['user_id']); ?>',
+                                        '<?php echo htmlspecialchars($row['certificate']); ?>', 
+                                        '<?php echo htmlspecialchars($row['location']); ?>', 
+                                        '<?php echo htmlspecialchars($row['sport']); ?>', 
+                                        '<?php echo htmlspecialchars($row['day_time']); ?>', 
+                                        '<?php echo htmlspecialchars($row['state']); ?>'
+                                    )">Edit</button>
+                                    <form method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this trainer?')">
                                         <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($row['id']); ?>">
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
-                                    <a href="edit_trainer.php?id=<?php echo htmlspecialchars($row['id']); ?>" class="btn btn-warning btn-sm">Edit</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -170,6 +193,53 @@ $conn->close();
             <?php else: ?>
                 <p class="text-center">No trainers found.</p>
             <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Trainer Modal -->
+<div class="modal fade" id="editTrainerModal" tabindex="-1" role="dialog" aria-labelledby="editTrainerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editTrainerModalLabel">Edit Trainer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="update_id" id="edit_id">
+                    <div class="form-group">
+                        <label for="edit_user_id">User ID</label>
+                        <input type="text" class="form-control" id="edit_user_id" name="user_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_certificate">Certificate</label>
+                        <input type="text" class="form-control" id="edit_certificate" name="certificate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_location">Location</label>
+                        <input type="text" class="form-control" id="edit_location" name="location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_sport">Sport</label>
+                        <input type="text" class="form-control" id="edit_sport" name="sport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_day_time">Day/Time</label>
+                        <input type="text" class="form-control" id="edit_day_time" name="day_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_state">Status</label>
+                        <input type="text" class="form-control" id="edit_state" name="state" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
