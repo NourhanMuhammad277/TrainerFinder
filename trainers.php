@@ -145,14 +145,18 @@
         $sport = $_GET['sport'];
 
         // Database connection (adjust as needed)
-        $conn = new mysqli('localhost', 'username', 'password', 'TrainerFinder');
+        $conn = new mysqli('localhost', 'root', '', 'TrainerFinder');
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
         // Prepared statement to find trainers based on location and sport
-        $stmt = $conn->prepare("SELECT * FROM trainers WHERE location = ? AND sport = ?");
-        $stmt->bind_param("ss", $location, $sport);
+        $stmt = $conn->prepare(query: "SELECT * FROM accepted_trainers WHERE location = '$location' AND sport = '$sport'");
+        $var1 = strval($location);
+        $var2 = strval($sport);
+        $stmt->bind_param("ss",
+            $var1,
+            $var2);
         $stmt->execute();
         $result = $stmt->get_result();
 
