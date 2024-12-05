@@ -16,7 +16,7 @@
             background-color: #28a745;
         }
         .hero-section {
-            background: url('images/trainers-banner.jpg') no-repeat center center;
+            background: url('images/t.jpg') no-repeat center center;
             background-size: cover;
             height: 300px;
             display: flex;
@@ -101,7 +101,7 @@
 </nav>
 
 <!-- Hero Section -->
-<div class="hero-section">
+<div class="hero-section " style="text-shadow: 2px 2px 10px black; font-weight: bolder">
     <h1>Find Your Trainer</h1>
 </div>
 
@@ -131,6 +131,7 @@
                 <option value="Basketball">Basketball</option>
                 <option value="Football">Football</option>
                 <option value="Crossfit">Crossfit</option>
+                <option value="Tennis">Tennis</option>
             </select>
         </div>
         <button type="submit" class="btn btn-success btn-block">Find Trainers</button>
@@ -151,12 +152,12 @@
         }
 
         // Prepared statement to find trainers based on location and sport
-        $stmt = $conn->prepare(query: "SELECT * FROM accepted_trainers WHERE location = '$location' AND sport = '$sport'");
-        $var1 = strval($location);
-        $var2 = strval($sport);
+        $stmt = $conn->prepare(query: "SELECT * FROM accepted_trainers WHERE location = ? AND sport = ?");
+        $varLocation = strval($location);
+        $varSport = strval($sport);
         $stmt->bind_param("ss",
-            $var1,
-            $var2);
+            $varLocation,
+            $varSport);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -166,7 +167,7 @@
                 echo '<h3>' . htmlspecialchars($row['username']) . '</h3>';
                 echo '<p><strong>Sport:</strong> ' . htmlspecialchars($row['sport']) . '</p>';
                 echo '<p><strong>Location:</strong> ' . htmlspecialchars($row['location']) . '</p>';
-                echo '<p><strong>Available Timings:</strong> ' . htmlspecialchars($row['timings']) . '</p>';
+                echo '<p><strong>Available Timings:</strong> ' . htmlspecialchars($row['day_time']) . '</p>';
                 echo '</div>';
             }
         } else {
