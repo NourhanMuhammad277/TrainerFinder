@@ -162,12 +162,16 @@
         $result = $stmt->get_result();
 
         if ($result && $result->num_rows > 0) {
+
             while ($row = $result->fetch_assoc()) {
+                $id = $row['id'];
+                $fullurl = "trainer-info.php?id=$id";
                 echo '<div class="trainer-card">';
                 echo '<h3>' . htmlspecialchars($row['username']) . '</h3>';
                 echo '<p><strong>Sport:</strong> ' . htmlspecialchars($row['sport']) . '</p>';
                 echo '<p><strong>Location:</strong> ' . htmlspecialchars($row['location']) . '</p>';
                 echo '<p><strong>Available Timings:</strong> ' . htmlspecialchars($row['day_time']) . '</p>';
+                echo '<a href=" '. $fullurl.'"><p> Subsribe noww </p> </a>' ;
                 echo '</div>';
             }
         } else {
